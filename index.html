@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evalvate - AI-Powered Technical Interview Practice</title>
+
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../css/index.css">
+
+    <!-- External Libraries -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <br>
+    <br>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="card-image-container">
+                    <img src="Logo.png" alt="Evalvate Logo" style="width: 45px; height: 40px;">
+                </div>
+                <b>Evalvate</b>
+
+            </a>
+            <!-- This div will be hidden on mobile and replaced by a menu button -->
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="Subscription.html">Pricing</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="signup.html" class="btn btn-primary">Register Now</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="mobile-menu-button">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu">
+            <a href="#features">How It Works</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1>The Ultimate Rehearsal for Your <span class="highlight-text">Technical Interview</span></h1>
+                <p>Empowering students with AI-driven practice and real-time feedback to build the confidence needed to
+                    land top-tier tech roles.</p>
+                <div class="hero-cta-buttons">
+                    <a href="interview.html" class="hero-cta">Start Free Demo <i class="fas fa-arrow-right"></i></a>
+                    <a href="Subscription.html" class="btn btn-secondary">Explore Premium</a>
+                </div>
+            </div>
+            <div class="hero-visualization-container">
+                <!-- Top Row - Small Metric Cards -->
+                <div class="metric-cards">
+                    <div class="metric-card">
+                        <div class="metric-icon">🚀</div>
+                        <div class="metric-label">Improve Your Overall Spoken Skills</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">👨‍💻</div>
+                        <div class="metric-label">Test Your Technical Skills</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">📈</div>
+                        <div class="metric-label">Increase Your Success Rate</div>
+                    </div>
+                </div>
+
+                <!-- Middle Card - AI Assistant -->
+                <div class="ai-assistant-card">
+                    <div class="assistant-header">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>AI Interview Coach</span>
+                    </div>
+                    <div class="assistant-content">
+                        <div>
+                            <div class="card-image-container">
+                                <img src="Logo.png" alt="Evalvate Logo" style="width: 45px; height: 40px;">
+                            </div>
+                        </div>
+                        <div class="assistant-info">
+                            <div class="assistant-name">Evalvate AI</div>
+                            <div class="assistant-role">Your Personal Interview Trainer</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Row - Feature Cards -->
+                <div class="feature-cards">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <div class="feature-label">Interview Prep</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <div class="feature-label">Test Results</div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Company Logos Section -->
+    <section class="company-logos-section">
+        <div class="container">
+            <p>Practice with questions modeled on interviews at the world's leading companies</p>
+            <div class="logo-marquee">
+                <div class="logo-track">
+                    <!-- Logos will be dynamically inserted by JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Large Feature Cards Section -->
+    <section class="features section" id="features">
+        <div class="container">
+            <div class="section-title-left">
+                <span class="subtitle">
+                    <h1> At Evalvate </h1>
+                </span>
+                <h2>We Provide Comprehensive Support for Your Entire Interview Process</h2>
+            </div>
+            <div class="large-features-grid">
+                <div class="large-feature-card dark-card">
+                    <h3>Simulate Real-World Interviews</h3>
+                    <p>Practice with an AI that replicates the pressure and question patterns of top-tier technical
+                        rounds, so you're prepared for anything.</p>
+                    <div class="card-image-container">
+                        <img src="cardA.png" alt="AI Screening">
+                    </div>
+                </div>
+                <div class="large-feature-card light-blue-card">
+                    <h3>Receive Actionable AI Insights</h3>
+                    <p>Get a detailed, 360-degree analysis of your technical logic, communication clarity, and on-camera
+                        presence to pinpoint exact areas for improvement.</p>
+                    <div class="card-image-container">
+                        <img src="cardB.png" alt="Interview Simulation">
+                    </div>
+                </div>
+                <div class="large-feature-card white-card">
+                    <h3>Build Unshakeable Confidence</h3>
+                    <p>Go beyond just knowing the answers. Master the art of communicating your solutions effectively
+                        under pressure and walk into your next interview with total confidence.</p>
+                    <div class="card-image-container">
+                        <img src="cardE.png" alt="Analytics Dashboard">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insights Section -->
+    <section class="insights-section section">
+        <div class="container insights-container">
+            <div class="insights-content">
+                <span class="subtitle">
+                    <h1>Why Evalvate?</h1>
+                </span>
+                <h2>We Simplify How You Master Technical Interviews.</h2>
+                <p class="quote">"Evalvate is a true game-changer in interview prep. As a student, it gave me the
+                    data-driven feedback I needed to turn my weaknesses into strengths."</p>
+                <div class="quote-author">
+                    <img src="https://placehold.co/40x40/E2E8F0/4A5568?text=S" alt="Student Initial">
+                    <span>Ansh Sharma, VIT Pune</span>
+                </div>
+            </div>
+            <div class="insights-visual">
+                <h4>Your Personalized Feedback Report</h4>
+                <div class="insight-item">
+                    <h5><i class="fas fa-brain"></i> Facial Analysis</h5>
+                    <p>Get feedback on eye contact, expressions, and engagement to project confidence.</p>
+                </div>
+                <div class="insight-item">
+                    <h5><i class="fas fa-comments"></i> Linguistic Analysis</h5>
+                    <p>Improve grammar, vocabulary, and conciseness for clear, impactful answers.</p>
+                </div>
+                <div class="insight-item">
+                    <h5><i class="fas fa-microphone-alt"></i> Vocal Analysis</h5>
+                    <p>Master your tone, pace, and eliminate filler words to sound authoritative.</p>
+                </div>
+                <div class="insight-item">
+                    <h5><i class="fas fa-code"></i> Technical Approach</h5>
+                    <p>Receive analysis on your problem-solving logic and discover optimal solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials section" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Hear from Our Users</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card video-card">
+                    <div class="video-placeholder">
+                        <i class="fas fa-play-circle"></i>
+                        <span>Video testimonial coming soon</span>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Aashi Jain</h4>
+                        <p>Product Manager at Barclays</p>
+                    </div>
+                </div>
+                <div class="testimonial-card video-card">
+                    <div class="video-placeholder">
+                        <i class="fas fa-play-circle"></i>
+                        <span>Video testimonial coming soon</span>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Ishank Kankaria</h4>
+                        <p>Software Developer at Finra</p>
+                    </div>
+                </div>
+                <div class="testimonial-card video-card">
+                    <div class="video-placeholder">
+                        <i class="fas fa-play-circle"></i>
+                        <span>Video testimonial coming soon</span>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Ajitkumar Jain</h4>
+                        <p>Vice President(O) at Bharat Forge</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta-section section">
+        <div class="container">
+            <h2>Ready to Streamline Your Interview Prep?</h2>
+            <p>Discover how our AI-powered platform can transform your recruitment strategy.</p>
+            <a href="interview.html" class="btn btn-dark">Start Your Free Demo <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="#home" class="logo">
+                    <div class="card-image-container">
+                        <img src="Logo.png" alt="Evalvate Logo" style="width: 140px; height: 70px;">
+
+                    </div>
+
+                </a>
+                <p>On a mission to change how the world prepares for interviews forever.</p>
+            </div>
+            <div class="footer-links-grid">
+                <div class="footer-links">
+                    <h4>Product</h4>
+                    <a href="#">AI Screening</a>
+                    <a href="#">Mock Interviews</a>
+                    <a href="#">Analytics</a>
+                    <a hre f="#">For Universities</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <a href="#">Blog</a>
+                    <a href="#">Case Studies</a>
+                    <a href="#">Ebooks</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <a href="aboutus.html">About Us</a>
+                    <a href="#">Careers</a>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+            </div>
+            <p>&copy; 2025 Evalvate. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+    <script src="../js/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Practice - AI Interview Bot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/interview.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <div class="timer">
+                <i class="fas fa-clock"></i>
+                <span id="timerDisplay">00:00</span>
+                <div class="timer-options">
+                    <button class="timer-btn" data-minutes="10">10min</button>
+                    <button class="timer-btn" data-minutes="20">20min</button>
+                    <button class="timer-btn" data-minutes="30">30min</button>
+                    <button class="timer-btn" data-minutes="0">No Limit</button>
+                </div>
+            </div>
+        </div>
+            <a href="index.html" class="logo">
+            <img src="Logo.png" alt="Evalvate Logo" style="width: 105px; height: x;">
+        
+        </div>
+             </a>
+        <div class="header-right">
+            <div class="theme-toggle">
+                <button id="themeToggleBtn" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+            </div>
+            <div class="user-menu">
+                <div class="user-avatar">U</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">
+                    <i class="fas fa-file-alt"></i>
+                    Resume
+                </h3>
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon"><i class="fas fa-file-arrow-up"></i></div>
+                    <div class="upload-text">Drag & drop your resume or click to upload</div>
+                    <button class="upload-button" id="uploadBtn">Upload Resume</button>
+                    <input type="file" id="fileInput" accept=".pdf,.doc,.docx,.txt" style="display: none;">
+                </div>
+                <div class="file-info" id="fileInfo">
+                    <i class="fas fa-check-circle"></i>
+                    <span id="fileName">Resume uploaded successfully!</span>
+                </div>
+            </div>
+            
+            <div class="sidebar-section webcam-section">
+                <h3 class="sidebar-title">
+                    <i class="fas fa-video"></i>
+                    Webcam Preview
+                </h3>
+                <div class="webcam-container">
+                    <video id="webcamPreview" class="webcam-preview" autoplay muted playsinline style="display: none;"></video>
+                    <div class="webcam-placeholder" id="webcamPlaceholder">
+                        <i class="fas fa-video-slash"></i>
+                    </div>
+                </div>
+
+                <div class="mic-toggle">
+                    <button id="micToggleBtn" class="mic-toggle-btn" title="Speak your answer"><i class="fas fa-microphone"></i></button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Interview Area -->
+        <main class="interview-area">
+            <!-- Chat Container -->
+            <div class="chat-container">
+                <div class="chat-header">
+                    <i class="fas fa-robot"></i>
+                    AI Interview Assistant
+                </div>
+                <div class="chat-messages" id="chatMessages">
+                    <!-- Messages will be injected here -->
+                </div>
+                <div class="chat-input-area">
+                    <form class="chat-input-form" id="chatInputForm">
+                        <textarea id="userInput" placeholder="Type your response..." rows="1"></textarea>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <div class="controls">
+                <button class="control-btn btn-start" id="startBtn">
+                    <i class="fas fa-play"></i>
+                    Start Interview
+                </button>
+                <button class="control-btn btn-ask-again" id="askAgainBtn" disabled>
+                    <i class="fas fa-redo"></i>
+                    Ask Again
+                </button>
+                <button class="control-btn btn-stop" id="stopBtn" disabled>
+                    <i class="fas fa-stop"></i>
+                    End Interview
+                </button>
+                <button class="control-btn btn-report" id="reportBtn" style="display: none;">
+                    <i class="fas fa-chart-line"></i>
+                    Generate Report
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script src="../js/interview.js"></script>
+</body>
+</html>

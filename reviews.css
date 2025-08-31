@@ -1,0 +1,122 @@
+/*
+  ========================================
+  Evalvate - Reviews Page Stylesheet (Corrected)
+  ========================================
+*/
+
+/* --- Main Page Layout --- */
+.reviews-page {
+    padding-top: calc(var(--spacing-4xl) + 72px);
+    /* Header height + padding */
+    padding-bottom: var(--spacing-4xl);
+    background-color: var(--color-background);
+}
+
+.reviews-page .section-header p {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.1rem;
+}
+
+/* --- Reviews Grid --- */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    /* Explicit spacing between cards to match design */
+    margin-bottom: 48px;
+    /* Space after last row of videos */
+}
+
+/* --- Individual Review Card --- */
+.review-card {
+    /* The main container for the card */
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    /* This is crucial to make inner elements respect the rounded corners */
+    transition: var(--transition-fast);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--color-border);
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+}
+
+.video-link {
+    display: block;
+    text-decoration: none;
+}
+
+/* New video container to mirror screenshot style */
+.video-container {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: var(--color-dark);
+    display: block;
+}
+
+.review-video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    background-color: var(--color-dark);
+}
+
+.video-placeholder {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: var(--color-dark);
+    display: flex;
+    flex-direction: column;
+    /* Stack icon and text vertically */
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    gap: var(--spacing-md);
+    /* Space between icon and text */
+}
+
+.video-placeholder i {
+    font-size: 3.5rem;
+    opacity: 0.7;
+    transition: var(--transition-fast);
+}
+
+.video-placeholder span {
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+.video-link:hover .video-placeholder i {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.review-content {
+    /* This is the light grey area for text */
+    background-color: var(--color-background-offset);
+    padding: var(--spacing-lg);
+}
+
+.review-content h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.review-content p {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
+/* --- Page-specific bottom breathing room --- */
+.footer {
+    padding-bottom: 16px;
+}

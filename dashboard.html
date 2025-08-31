@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Performance Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header fade-in">
+            <h1><i class="fas fa-chart-line"></i> Interview Performance Dashboard</h1>
+            <p>Comprehensive analysis of your interview performance</p>
+        </div>
+
+        <div id="loadingContainer" class="loading-container">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">Loading your interview report...</div>
+        </div>
+
+        <div id="dashboardContent" style="display: none;">
+            <!-- Candidate Info Card -->
+            <div class="candidate-card fade-in">
+                <img id="candidatePhoto" class="candidate-photo" src="" alt="Candidate Photo">
+                <div class="candidate-info">
+                    <h2 id="candidateName">Loading...</h2>
+                    <div class="candidate-details">
+                        <div class="detail-item">
+                            <i class="fas fa-envelope"></i>
+                            <span id="candidateEmail">Loading...</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span id="candidateRole">Loading...</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-building"></i>
+                            <span id="interviewCompany">Loading...</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-calendar"></i>
+                            <span id="interviewDate">Loading...</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-clock"></i>
+                            <span id="interviewDuration">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Score Overview -->
+            <div class="score-grid fade-in">
+                <div class="score-card">
+                    <div class="score-value score-overall" id="overallScore">0%</div>
+                    <div class="score-label">Overall Performance</div>
+                </div>
+                <div class="score-card">
+                    <div class="score-value score-content" id="contentScore">0%</div>
+                    <div class="score-label">Content Relevance</div>
+                </div>
+                <div class="score-card">
+                    <div class="score-value score-confidence" id="confidenceScore">0%</div>
+                    <div class="score-label">Confidence Level</div>
+                </div>
+                <div class="score-card">
+                    <div class="score-value score-grammar" id="grammarScore">0%</div>
+                    <div class="score-label">Grammar Score</div>
+                </div>
+            </div>
+
+            <div class="main-content fade-in">
+                <!-- Left Column -->
+                <div>
+                    <!-- Skills Breakdown -->
+                    <div class="skills-section">
+                        <h3 class="section-title">
+                            <i class="fas fa-star"></i>
+                            Skills Assessment
+                        </h3>
+                        <div id="skillsList"></div>
+                    </div>
+
+                    <!-- Grammar Analysis -->
+                    <div class="grammar-section">
+                        <h3 class="section-title">
+                            <i class="fas fa-spell-check"></i>
+                            Grammar Analysis
+                        </h3>
+                        <div class="dominant-emotion">
+                            Total Errors Found: <span id="totalErrors">0</span>
+                        </div>
+                        
+                        <div id="grammarMistakes" class="grammar-mistakes" style="display: none;">
+                            <h4><i class="fas fa-exclamation-triangle"></i> Common Mistakes</h4>
+                            <div id="mistakesList"></div>
+                        </div>
+                        
+                        <div id="grammarCorrections" class="grammar-corrections" style="display: none;">
+                            <h4><i class="fas fa-check-circle"></i> Suggested Corrections</h4>
+                            <div id="correctionsList"></div>
+                        </div>
+                    </div>
+
+                    <!-- Flagged Responses -->
+                    <div id="flaggedSection" class="flagged-section" style="display: none;">
+                        <h3 class="section-title">
+                            <i class="fas fa-flag"></i>
+                            Areas Needing Attention
+                        </h3>
+                        <div id="flaggedList"></div>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div>
+                    <!-- Emotion Analysis -->
+                    <div class="emotions-section">
+                        <h3 class="section-title">
+                            <i class="fas fa-heart"></i>
+                            Emotional Analysis
+                        </h3>
+                        <div class="dominant-emotion">
+                            Dominant Emotion: <span id="dominantEmotion">Loading...</span>
+                        </div>
+                        <div id="emotionChart" class="emotion-chart"></div>
+                    </div>
+
+                    <!-- Recommendations -->
+                    <div class="recommendations-section">
+                        <h3 class="section-title">
+                            <i class="fas fa-lightbulb"></i>
+                            Recommendations
+                        </h3>
+                        
+                        <h4 style="color: #48bb78; margin-bottom: 10px;">
+                            <i class="fas fa-thumbs-up"></i> Strengths
+                        </h4>
+                        <ul id="strengthsList" class="recommendation-list"></ul>
+                        
+                        <h4 style="color: #ed8936; margin: 20px 0 10px 0;">
+                            <i class="fas fa-arrow-up"></i> Areas to Improve
+                        </h4>
+                        <ul id="improvementsList" class="recommendation-list"></ul>
+                        
+                        <h4 style="color: #667eea; margin: 20px 0 10px 0;">
+                            <i class="fas fa-tasks"></i> Action Items
+                        </h4>
+                        <ul id="actionsList" class="recommendation-list"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons fade-in">
+                <button class="btn btn-primary" onclick="startNewInterview()">
+                    <i class="fas fa-redo"></i>
+                    Start New Interview
+                </button>
+                <button class="btn btn-secondary" onclick="downloadReport()">
+                    <i class="fas fa-download"></i>
+                    Download Report
+                </button>
+            </div>
+        </div>
+
+        <div id="errorMessage" class="error-message" style="display: none;">
+            <i class="fas fa-exclamation-circle" style="font-size: 3rem; margin-bottom: 20px;"></i>
+            <h2>No Interview Data Found</h2>
+            <p>It looks like there's no interview report available. Please complete an interview first.</p>
+            <div style="margin-top: 20px;">
+                <button class="btn btn-primary" onclick="goToInterview()">
+                    <i class="fas fa-play"></i>
+                    Start Interview
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/dashboard.js"></script>     
+</body>
+</html>
